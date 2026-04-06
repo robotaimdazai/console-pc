@@ -4,9 +4,10 @@ node_modules/
 # Build output
 dist/
 
-# Release binaries
-release/
+# Release binaries - ignore all except zip files and .gitkeep
+release/*
 !release/.gitkeep
+!release/*.zip
 
 # Logs
 *.log
