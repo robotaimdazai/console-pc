@@ -30,13 +30,13 @@ app.on('second-instance', () => {
 
 function createWindow() {
   const { screen } = require('electron');
-  const { width, height } = screen.getPrimaryDisplay().workAreaSize;
+  const { x, y, width, height } = screen.getPrimaryDisplay().bounds;
 
   mainWindow = new BrowserWindow({
     width,
     height,
-    x: 0,
-    y: 0,
+    x,
+    y,
     fullscreen: false,
     fullscreenable: false,
     frame: false,
@@ -53,7 +53,7 @@ function createWindow() {
   });
 
   mainWindow.once('ready-to-show', () => {
-    mainWindow.maximize();
+    mainWindow.setBounds({ x, y, width, height });
     mainWindow.show();
   });
 

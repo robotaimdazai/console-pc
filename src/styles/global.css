@@ -594,6 +594,13 @@ html, body, #root {
 .add-game-modal {
   width: 620px;
   max-width: 92vw;
+  max-height: 85vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.add-game-modal::-webkit-scrollbar {
+  display: none;
 }
 
 /* ===== Art Search Modal ===== */
