@@ -53,7 +53,7 @@ function createWindow() {
   });
 
   mainWindow.once('ready-to-show', () => {
-    mainWindow.setBounds({ x, y, width, height });
+    mainWindow.setBounds({ x, y, width, height: height - 1 });
     mainWindow.show();
   });
 
